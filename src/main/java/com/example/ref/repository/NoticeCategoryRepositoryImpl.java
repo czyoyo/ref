@@ -1,6 +1,7 @@
 package com.example.ref.repository;
 
 import com.example.ref.entity.NoticeCategory;
+import com.example.ref.entity.QNoticeCategory;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.BooleanExpression;

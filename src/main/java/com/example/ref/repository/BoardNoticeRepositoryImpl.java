@@ -1,6 +1,7 @@
 package com.example.ref.repository;
 
 import com.example.ref.entity.BoardNotice;
+import com.example.ref.entity.QBoardNotice;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;

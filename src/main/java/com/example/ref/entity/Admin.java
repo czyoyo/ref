@@ -66,12 +66,13 @@ public class Admin extends BaseEntity {
     @Comment("어드민")
     private String refreshToken;
 
-    @OneToMany(mappedBy = "userAdmin")
+    @OneToMany(mappedBy = "admin")
     @Comment("어드민")
+    @Builder.Default
     private List<AdminImage> adminImageList = new ArrayList<>();
 
     // 아마도 OneToOne 조회시 Eager 로 동작 하겠지만 명확성과 통일성을 위해 이렇게 간다.
-    @OneToOne(mappedBy = "userAdmin")
+    @OneToOne(mappedBy = "admin")
     private AdminProfileImage adminProfileImage;
 
     // 회원 탈퇴일

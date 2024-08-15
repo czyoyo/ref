@@ -1,6 +1,7 @@
 package com.example.ref.repository;
 
 
+import com.example.ref.entity.QUserCategory;
 import com.example.ref.entity.UserCategory;
 import com.example.ref.rules.UserCategoryDepth;
 import com.querydsl.core.BooleanBuilder;

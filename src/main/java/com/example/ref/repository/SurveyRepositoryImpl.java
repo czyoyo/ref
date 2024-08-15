@@ -1,5 +1,9 @@
 package com.example.ref.repository;
 
+import com.example.ref.entity.QSurvey;
+import com.example.ref.entity.QSurveyCategory;
+import com.example.ref.entity.QSurveyLabel;
+import com.example.ref.entity.QSurveyQuestion;
 import com.example.ref.entity.Survey;
 import com.example.ref.rules.SurveyType;
 import com.querydsl.core.BooleanBuilder;

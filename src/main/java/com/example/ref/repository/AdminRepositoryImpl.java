@@ -1,6 +1,7 @@
 package com.example.ref.repository;
 
 import com.example.ref.entity.Admin;
+import com.example.ref.entity.QAdmin;
 import com.example.ref.entity.User;
 import com.example.ref.rules.UserCategoryDepth;
 import com.querydsl.core.BooleanBuilder;
@@ -74,25 +75,25 @@ public class AdminRepositoryImpl implements AdminCustomRepository {
     }
 
 
-    @Override
-    public Page<Admin> findMyClientAdmin(Pageable pageable, Long adminId) {
-
-        List<Admin> adminList = queryFactory
-            .selectFrom(QAdmin.admin)
-            .where(QAdmin.admin.id.eq(adminId))
-            .leftJoin(QAdmin.admin.adminProfileImage).fetchJoin()
-            .offset(pageable.getOffset())
-            .limit(pageable.getPageSize())
-            .orderBy(getOrderSpecifiers(pageable))
-            .fetch();
-
-        JPAQuery<Long> countQuery = queryFactory
-            .select(QAdmin.admin.count())
-            .from(QAdmin.admin)
-            .where(QAdmin.admin.id.eq(adminId));
-
-        return PageableExecutionUtils.getPage(adminList, pageable, countQuery::fetchOne);
-    }
+//    @Override
+//    public Page<Admin> findMyClientAdmin(Pageable pageable, Long adminId) {
+//
+//        List<Admin> adminList = queryFactory
+//            .selectFrom(QAdmin.admin)
+//            .where(QAdmin.admin.id.eq(adminId))
+//            .leftJoin(QAdmin.admin.adminProfileImage).fetchJoin()
+//            .offset(pageable.getOffset())
+//            .limit(pageable.getPageSize())
+//            .orderBy(getOrderSpecifiers(pageable))
+//            .fetch();
+//
+//        JPAQuery<Long> countQuery = queryFactory
+//            .select(QAdmin.admin.count())
+//            .from(QAdmin.admin)
+//            .where(QAdmin.admin.id.eq(adminId));
+//
+//        return PageableExecutionUtils.getPage(adminList, pageable, countQuery::fetchOne);
+//    }
 
 
 

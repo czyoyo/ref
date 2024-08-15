@@ -51,6 +51,7 @@ public class UserCategory extends BaseEntity {
     private UserCategory parent;
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
+    @Builder.Default
     private List<UserCategory> children = new ArrayList<>();
 
     @Column(name = "depth", columnDefinition = "INT UNSIGNED", nullable = false)
@@ -59,10 +60,12 @@ public class UserCategory extends BaseEntity {
 
     @OneToMany(mappedBy = "userCategory", fetch = FetchType.LAZY)
     @Comment("카테고리에 속한 어드민")
+    @Builder.Default
     private List<Admin> adminList = new ArrayList<>();
 
     @OneToMany(mappedBy = "userCategory", fetch = FetchType.LAZY)
     @Comment("카테고리에 속한 유저")
+    @Builder.Default
     private List<User> userList = new ArrayList<>();
 
 

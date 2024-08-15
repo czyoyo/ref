@@ -31,6 +31,7 @@ public class UserCategoryDto {
     private UserCategoryDto parent;
 
     @Schema(description = "카테고리 자식 리스트")
+    @Builder.Default
     private List<UserCategoryDto> children = new ArrayList<>();
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

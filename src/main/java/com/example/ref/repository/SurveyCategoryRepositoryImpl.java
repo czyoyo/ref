@@ -1,5 +1,6 @@
 package com.example.ref.repository;
 
+import com.example.ref.entity.QSurveyCategory;
 import com.example.ref.entity.SurveyCategory;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.OrderSpecifier;

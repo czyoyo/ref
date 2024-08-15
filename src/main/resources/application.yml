@@ -16,7 +16,7 @@ spring:
         default-page-size: 10
         one-indexed-parameters: true
   profiles:
-    active: dev
+    active: local
   jpa:
     properties:
       hibernate:

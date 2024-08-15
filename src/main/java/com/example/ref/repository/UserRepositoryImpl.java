@@ -1,5 +1,6 @@
 package com.example.ref.repository;
 
+import com.example.ref.entity.QUser;
 import com.example.ref.entity.User;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.OrderSpecifier;
