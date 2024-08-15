@@ -1,0 +1,81 @@
+spring:
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: false
+
+  security:
+    user:
+        name: admin
+        password: 1234
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        one-indexed-parameters: true
+  profiles:
+    active: dev
+  jpa:
+    properties:
+      hibernate:
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+          implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        default_batch_fetch_size: 1000
+  output:
+    ansi:
+      enabled: always
+
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 250MB
+  jackson:
+    time-zone: Asia/Seoul # 타임존을 서울로 설정한다. (기본값은 UTC)
+    date-format: yyyy-MM-dd HH:mm:ss # 날짜 포맷을 설정한다.
+
+server:
+  error:
+    include-stacktrace: never
+  tomcat:
+    max-http-form-post-size: 200MB
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.log
+
+
+jwt:
+  header: Authorization
+  refresh-token-header: RefreshToken
+  roles: roles
+  secret: aG5nc2lodDM4N3locndzYW9ocmY4OWFyeWhnM3c5Z3Izd3E4eXI4dzN5aHJvOXczcg==
+  access-token-validity-in-seconds: 10800000 # 3시간 밀리세컨드
+  refresh-token-validity-in-seconds: 259200000 # 3일 밀리세컨드
+
+cloud:
+  aws:
+    credentials:
+      access-key: EorOTd3CjYpC1ACf4R8f
+      secret-key: cbHEN1nERBlg3QaSqS6mqs088tcvxB3ImgiI9Upo
+    stack:
+      auto: false
+    region:
+      static: ap-northeast-2
+    s3:
+      endpoint: https://kr.object.gov-ncloudstorage.com
+      bucket: example
+
+

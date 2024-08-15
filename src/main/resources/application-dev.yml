@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  sql:
+    init: # ddl-auto validate & none 일때는 never 해야 오류 안남
+      mode: never # always, never, embedded 더미 데이터를 넣을 때 사용(개발할 때만 사용)
+  jpa:
+    hibernate:
+      ddl-auto: update  # create, update, validate
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: false # 더미 데이터를 넣을 때 사용(개발할 때만 사용)
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  servlet:
+    multipart:
+      location: ${SPRING_MULTIPART_PATH}
+      max-file-size: 200MB
+      max-request-size: 250MB
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST}
+      port: 6379
+
+logging:
+  pattern:
+    level: DEBUG # INFO, DEBUG, WARN, ERROR
+  file:
+    path: ${SPRING_LOG_FILE_PATH}
+
+
+path:
+  gov-ncp-location: ${GOV_NCP_LOCATION}
+
+elasticsearch:
+  host: ${ELASTICSEARCH_HOST}
+
+

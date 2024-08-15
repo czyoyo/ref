@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "searchKeyword" : {
+      "type" : "text"
+    },
+    "searchCount" : {
+      "type" : "long"
+    },
+    "identifier" : {
+      "type" : "keyword"
+    }
+  }
+}
